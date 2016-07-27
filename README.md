@@ -1,7 +1,7 @@
 # ng2Steps
 Steps component for angular2 where each step is different component and everything is wired together.
 
-![example](https://www.neuronet.pl/ng2Steps.gif)
+![example](http://neuronet.it:8888/github/ng2Steps.gif)
 
 Main component that contain steps:
 ```javascript
