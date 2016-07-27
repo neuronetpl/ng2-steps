@@ -58,7 +58,7 @@ Individual steps:
 ```javascript
 import {Component,Input} from '@angular/core';
 
-import { StepsService } from '../your_path/ng2Steps/steps.service';
+import { StepsService } from '../your_path/ng2Steps/steps';
 
 @Component({
   moduleId:module.id,
