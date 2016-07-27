@@ -86,3 +86,6 @@ export class Step1Component{
 }
 
 ```
+
+
+(author:[oprogramowanie dedykowane](https://www.neuronet.pl))
