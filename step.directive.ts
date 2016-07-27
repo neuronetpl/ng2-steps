@@ -1,9 +1,9 @@
 import { Directive , Input, OnInit, ComponentResolver,ViewContainerRef } from '@angular/core';
 
-import { StepsService } from './steps.service';
+import { StepsService } from './steps';
 
 @Directive({
-  selector:'[ng2Steps]'
+  selector:'[ng2Step]'
 })
 export class StepDirective implements OnInit{
 

@@ -1,9 +1,8 @@
 "use strict";
 var steps_service_1 = require('./steps.service');
+exports.StepsService = steps_service_1.StepsService;
+var step_directive_1 = require('./step.directive');
+exports.StepDirective = step_directive_1.StepDirective;
 var steps_component_1 = require('./steps.component');
-var steps_service_2 = require('./steps.service');
-exports.StepsService = steps_service_2.StepsService;
-var steps_component_2 = require('./steps.component');
-exports.StepsComponent = steps_component_2.StepsComponent;
-exports.STEPS = [steps_service_1.StepsService, steps_component_1.StepsComponent];
+exports.StepsComponent = steps_component_1.StepsComponent;
 //# sourceMappingURL=steps.js.map

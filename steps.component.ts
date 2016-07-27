@@ -1,16 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { StepDirective } from './step.directive';
-import { StepsService } from './steps';
+
+import { StepsService,StepDirective } from './steps';
 
 
 @Component({
   moduleId:module.id,
-  selector: 'nn-steps',
+  selector: 'ng2Steps',
   templateUrl:`templates/steps.html`,
   styleUrls:['css/steps.css'],
-  directives:[StepDirective],
-  providers:[]
+  directives:[StepDirective]
 })
 export class StepsComponent implements OnInit{
 

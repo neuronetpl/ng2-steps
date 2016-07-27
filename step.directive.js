@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var steps_service_1 = require('./steps.service');
+var steps_1 = require('./steps');
 var StepDirective = (function () {
     function StepDirective(resolver, viewContainerRef, sds) {
         this.resolver = resolver;
@@ -35,9 +35,9 @@ var StepDirective = (function () {
     ], StepDirective.prototype, "index", void 0);
     StepDirective = __decorate([
         core_1.Directive({
-            selector: '[ng2Steps]'
+            selector: '[ng2Step]'
         }), 
-        __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ViewContainerRef, steps_service_1.StepsService])
+        __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ViewContainerRef, steps_1.StepsService])
     ], StepDirective);
     return StepDirective;
 }());

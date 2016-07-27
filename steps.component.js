@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var step_directive_1 = require('./step.directive');
 var steps_1 = require('./steps');
 var StepsComponent = (function () {
     function StepsComponent(steps) {
@@ -32,11 +31,10 @@ var StepsComponent = (function () {
     StepsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'nn-steps',
+            selector: 'ng2Steps',
             templateUrl: "templates/steps.html",
             styleUrls: ['css/steps.css'],
-            directives: [step_directive_1.StepDirective],
-            providers: []
+            directives: [steps_1.StepDirective]
         }), 
         __metadata('design:paramtypes', [steps_1.StepsService])
     ], StepsComponent);
