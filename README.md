@@ -79,9 +79,9 @@ export class Step1Component{
     // subscribe for specific data from other components
     // each time some other component update data we will have actual
     // getData is subscribe and unsubscribe on destroy for us
-    this.steps.getData('otherData',(oData)=>{
+    this.steps.getData((oData)=>{
       this.otherData=oData;
-    })
+    },'otherData');
   }
 }
 
