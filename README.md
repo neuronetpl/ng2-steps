@@ -77,8 +77,8 @@ export class Step1Component{
 
   ngOnInit(){
     // subscribe for specific data from other components
-    // each time some other component update data we will have actual
-    // getData is subscribe and unsubscribe on destroy for us
+    // each time some other component update data - we will have info
+    // getData is subscribing and unsubscribing on destroy for us
     this.steps.getData((oData)=>{
       this.otherData=oData;
     },'otherData');
