@@ -35,7 +35,7 @@ var StepDirective = (function () {
     ], StepDirective.prototype, "index", void 0);
     StepDirective = __decorate([
         core_1.Directive({
-            selector: '[nn-step]'
+            selector: '[ng2Steps]'
         }), 
         __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ViewContainerRef, steps_service_1.StepsService])
     ], StepDirective);

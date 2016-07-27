@@ -53,6 +53,16 @@ export class StepTestComponent implements OnInit{
 }
 ```
 
+```html
+<span>currentStep: {{step}}</span>
+
+<ng2Steps></ng2Steps>
+
+<div class="steps-buttons">
+  <button class="btn btn-default pull-sm-left" (click)="prev()" [disabled]="step==1"> Previous page</button>
+  <button class="btn btn-default pull-sm-right" (click)="next()" [hidden]="step==4"> Next page</button>
+</div>
+```
 
 Individual steps:
 ```javascript

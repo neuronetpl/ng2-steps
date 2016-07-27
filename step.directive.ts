@@ -3,7 +3,7 @@ import { Directive , Input, OnInit, ComponentResolver,ViewContainerRef } from '@
 import { StepsService } from './steps.service';
 
 @Directive({
-  selector:'[nn-step]'
+  selector:'[ng2Steps]'
 })
 export class StepDirective implements OnInit{
 
