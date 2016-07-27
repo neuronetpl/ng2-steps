@@ -1,0 +1,19 @@
+.steps .steps-headers {
+  display: flex;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.steps .steps-headers .steps-header {
+  flex-grow: 1;
+  cursor: pointer;
+  padding: 10px;
+}
+.steps .steps-headers .steps-header.active {
+  font-weight: bold;
+}
+.steps .steps-body .step {
+  display: none;
+}
+.steps .steps-body .step.visible {
+  display: block;
+}

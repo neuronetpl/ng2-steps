@@ -1,0 +1,26 @@
+// out: steps.css
+.steps{
+
+  .steps-headers{
+    display:flex;
+    user-select:none;
+    -webkit-user-select:none;
+    .steps-header{
+      flex-grow: 1;
+      cursor:pointer;
+      padding:10px;
+      &.active{
+        font-weight: bold;
+      }
+    }
+  }
+
+  .steps-body{
+    .step{
+      display:none;
+      &.visible{
+        display:block;
+      }
+    }
+  }
+}

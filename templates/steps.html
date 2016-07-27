@@ -1,0 +1,17 @@
+<div class="steps">
+  <div class="steps-headers">
+    <div class="steps-header" *ngFor="let _step of stepsData; let i=index" (click)="selectStep(i)" [ngClass]="{active:i+1==currentStep}">
+      {{_step.title | translate}}
+    </div>
+  </div>
+  <div class="steps-body">
+    <div class="step" *ngFor="let _step of stepsData; let i=index" [ngClass]="{visible:i+1==currentStep}">
+      <div id="component_{{i}}"></div>
+      <div class="step-content" nn-step [content]="_step.content" [index]="i">
+      </div>
+    </div>
+  </div>
+  <div class="steps-footer">
+
+  </div>
+</div>
