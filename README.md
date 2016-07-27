@@ -1,2 +1,88 @@
 # ng2Steps
 Steps component for angular2 where each step is different component and everything is wired together.
+
+
+Main component that contain steps:
+```javascript
+import { StepsService, StepsComponent } from '../your_path/ng2Steps/steps';
+
+import {Step1Component} from './step1.component';
+import {Step2Component} from './step2.component';
+import {Step3Component} from './step3.component';
+import {Step4Component} from './step4.component';
+
+@Component({
+  moduleId:module.id,
+  templateUrl:`templates/steptest.html`,
+  providers:[StepsService],// <---- don't forget
+  directives:[StepsComponent]// <---- don't forget
+})
+export class StepTestComponent implements OnInit{
+
+  public step:number=1;
+
+  public stepsData=[
+    {title:'first',content:Step1Component},
+    {title:'second',content:Step2Component},
+    {title:'third',content:Step3Component},
+    {title:'fourth',content:Step4Component}
+  ];
+
+  constructor(private steps:StepsService){}
+
+  ngOnInit(){
+
+    this.steps.setSteps(this.stepsData);
+    this.steps.setCurrentStep(1);
+    this.steps.getCurrentStep((currentStep)=>{
+      this.step=currentStep;
+    });
+    this.steps.getData((data)=>{
+      this.generator=data;
+    });
+
+  }
+
+  prev(){
+    this.steps.prevStep();
+  }
+  next(){
+    this.steps.nextStep();
+  }
+
+}
+```
+
+
+Individual steps:
+```javascript
+import {Component,Input} from '@angular/core';
+
+import { StepsService } from '../your_path/ng2Steps/steps.service';
+
+@Component({
+  moduleId:module.id,
+  templateUrl:'your_path/templates/step1.html'
+})
+export class Step1Component{
+  private someData:any={};
+  private otherCompsData:any={}
+
+  constructor(private steps:StepsService){}
+
+  updateData(data){
+    this.someData=data;
+    this.steps.setData('someData',data);// this will publish data to other components
+  }
+
+  ngOnInit(){
+    // subscribe for specific data from other components
+    // each time some other component update data we will have actual
+    // getData is subscribe and unsubscribe on destroy for us
+    this.steps.getData('otherData',(oData)=>{
+      this.otherData=oData;
+    })
+  }
+}
+
+```

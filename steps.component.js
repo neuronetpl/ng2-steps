@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var step_directive_1 = require('./step.directive');
-var steps_service_1 = require('./steps.service');
+var steps_1 = require('./steps');
 var StepsComponent = (function () {
     function StepsComponent(steps) {
         var _this = this;
@@ -38,7 +38,7 @@ var StepsComponent = (function () {
             directives: [step_directive_1.StepDirective],
             providers: []
         }), 
-        __metadata('design:paramtypes', [steps_service_1.StepsService])
+        __metadata('design:paramtypes', [steps_1.StepsService])
     ], StepsComponent);
     return StepsComponent;
 }());

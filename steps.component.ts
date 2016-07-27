@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { StepDirective } from './step.directive';
-import { StepsService } from './steps.service';
+import { StepsService } from './steps';
 
 
 @Component({
