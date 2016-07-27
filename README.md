@@ -18,7 +18,7 @@ import {Step4Component} from './step4.component';
   directives:[StepsComponent]// <---- don't forget
 })
 export class StepTestComponent implements OnInit{
-
+  public myData:any={};
   public step:number=1;
 
   public stepsData=[
@@ -37,14 +37,14 @@ export class StepTestComponent implements OnInit{
     this.steps.getCurrentStep((currentStep)=>{
       this.step=currentStep;
     });
-    this.steps.getData((data)=>{
-      this.generator=data;
-    });
+    this.steps.getData((data)=>{ // subscribe to data from each component
+      this.myData=data;
+    }/*, name */);// second parameter is name if we want only specific data from object
 
   }
 
   prev(){
-    this.steps.prevStep();
+    this.steps.prevStep();// service will go through the steps
   }
   next(){
     this.steps.nextStep();
