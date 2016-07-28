@@ -1,4 +1,4 @@
-# ng2Steps
+# ng2-steps
 Steps component for angular2 where each step is different component and everything is wired together.
 
 ![example](http://neuronet.it:8888/github/ng2Steps.gif)
