@@ -1,6 +1,6 @@
 {
   "name": "ng2-steps",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular2 steps component where each step is unique component and everything is wired together.",
   "main": "step.component.js",
   "scripts": {
