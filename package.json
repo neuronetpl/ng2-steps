@@ -1,0 +1,25 @@
+{
+  "name": "ng2-steps",
+  "version": "0.1.0",
+  "description": "Angular2 steps component where each step is unique component and everything is wired together.",
+  "main": "step.component.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neuronetpl/ng2-Steps.git"
+  },
+  "keywords": [
+    "ng2",
+    "angular2",
+    "steps",
+    "component"
+  ],
+  "author": "rafal.pospiech@neuronet.it",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neuronetpl/ng2-Steps/issues"
+  },
+  "homepage": "https://github.com/neuronetpl/ng2-Steps#readme"
+}
