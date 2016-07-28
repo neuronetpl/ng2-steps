@@ -1,7 +1,7 @@
 <div class="steps">
   <div class="steps-headers">
     <div class="steps-header" *ngFor="let _step of stepsData; let i=index" (click)="selectStep(i)" [ngClass]="{active:i+1==currentStep}">
-      {{_step.title | translate}}
+      {{_step.title}}
     </div>
   </div>
   <div class="steps-body">
