@@ -5,7 +5,7 @@ Steps component for angular2 where each step is different component and everythi
 
 Main component that contain steps:
 ```javascript
-import { StepsService, StepsComponent } from '../your_path/ng2Steps/steps';
+import { StepsService, StepsComponent } from '../your_path/ng2-steps/ng2-steps';
 
 import {Step1Component} from './step1.component';
 import {Step2Component} from './step2.component';
@@ -69,7 +69,7 @@ Individual steps:
 ```javascript
 import {Component,Input} from '@angular/core';
 
-import { StepsService } from '../your_path/ng2Steps/steps';
+import { StepsService } from '../your_path/ng2-steps/ng2-steps';
 
 @Component({
   moduleId:module.id,
