@@ -1,13 +1,8 @@
 <div class="steps">
-  <div class="steps-headers">
-    <div class="steps-header" *ngFor="let _step of stepsData; let i=index" (click)="selectStep(i)" [ngClass]="{active:i+1==currentStep}">
-      {{_step.title}}
-    </div>
-  </div>
   <div class="steps-body">
     <div class="step" *ngFor="let _step of stepsData; let i=index" [ngClass]="{visible:i+1==currentStep}">
       <div id="component_{{i}}"></div>
-      <div class="step-content" ng2Step [content]="_step.content" [index]="i">
+      <div class="step-content" ng2-step [content]="_step.content" [index]="i">
       </div>
     </div>
   </div>

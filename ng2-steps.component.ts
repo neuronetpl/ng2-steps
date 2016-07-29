@@ -6,12 +6,12 @@ import { StepsService,StepDirective } from './ng2-steps';
 
 @Component({
   moduleId:module.id,
-  selector: 'ng2Steps',
+  selector: 'ng2-steps-body',
   templateUrl:`templates/steps.html`,
   styleUrls:['css/steps.css'],
   directives:[StepDirective]
 })
-export class StepsComponent implements OnInit{
+export class StepsBodyComponent implements OnInit{
 
   private stepsData:any=[];
   private currentStep:number=1;

@@ -1,8 +1,10 @@
 import { StepsService } from './ng2-steps.service';
 import { StepDirective } from './ng2-step.directive';
-import { StepsComponent } from './ng2-steps.component';
+import { StepsBodyComponent } from './ng2-steps.component';
+import { StepsHeaderComponent } from './ng2-steps-header.component';
 
 export { StepsService } from './ng2-steps.service';
 export { StepDirective } from './ng2-step.directive';
-export { StepsComponent } from './ng2-steps.component';
+export { StepsBodyComponent } from './ng2-steps.component';
+export { StepsHeaderComponent } from './ng2-steps-header.component';
 //export const STEPS:Array<any> = [StepsService,StepsComponent,StepDirective];

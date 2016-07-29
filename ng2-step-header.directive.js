@@ -10,36 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ng2_steps_1 = require('./ng2-steps');
-var StepDirective = (function () {
-    function StepDirective(resolver, viewContainerRef, sds) {
-        this.resolver = resolver;
-        this.viewContainerRef = viewContainerRef;
+var StepsHeaderDirective = (function () {
+    function StepsHeaderDirective(sds) {
         this.sds = sds;
     }
-    StepDirective.prototype.ngOnInit = function () {
-        var _this = this;
-        //Magic!
-        this.resolver.resolveComponent(this.content)
-            .then(function (cmpFactory) {
-            var injector = _this.viewContainerRef.injector;
-            return _this.viewContainerRef.createComponent(cmpFactory, 0, injector);
-        });
-    };
     __decorate([
         core_1.Input('content'), 
         __metadata('design:type', Object)
-    ], StepDirective.prototype, "content", void 0);
+    ], StepsHeaderDirective.prototype, "content", void 0);
     __decorate([
         core_1.Input('index'), 
         __metadata('design:type', String)
-    ], StepDirective.prototype, "index", void 0);
-    StepDirective = __decorate([
+    ], StepsHeaderDirective.prototype, "index", void 0);
+    StepsHeaderDirective = __decorate([
         core_1.Directive({
-            selector: '[ng2-step]'
+            selector: '[ng2-steps-header]'
         }), 
-        __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ViewContainerRef, ng2_steps_1.StepsService])
-    ], StepDirective);
-    return StepDirective;
+        __metadata('design:paramtypes', [ng2_steps_1.StepsService])
+    ], StepsHeaderDirective);
+    return StepsHeaderDirective;
 }());
-exports.StepDirective = StepDirective;
-//# sourceMappingURL=ng2-step.directive.js.map
+exports.StepsHeaderDirective = StepsHeaderDirective;
+//# sourceMappingURL=ng2-step-header.directive.js.map

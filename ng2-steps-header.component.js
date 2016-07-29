@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ng2_steps_1 = require('./ng2-steps');
-var StepsBodyComponent = (function () {
-    function StepsBodyComponent(steps) {
+var StepsHeaderComponent = (function () {
+    function StepsHeaderComponent(steps) {
         var _this = this;
         this.steps = steps;
         this.stepsData = [];
@@ -23,22 +23,19 @@ var StepsBodyComponent = (function () {
             _this.currentStep = step;
         });
     }
-    StepsBodyComponent.prototype.ngOnInit = function () { };
-    StepsBodyComponent.prototype.selectStep = function (index) {
-        this.currentStep = index + 1;
-        this.steps.setCurrentStep(this.currentStep);
+    StepsHeaderComponent.prototype.selectStep = function (index) {
+        this.steps.setCurrentStep(index + 1);
     };
-    StepsBodyComponent = __decorate([
+    StepsHeaderComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'ng2-steps-body',
-            templateUrl: "templates/steps.html",
-            styleUrls: ['css/steps.css'],
-            directives: [ng2_steps_1.StepDirective]
+            selector: 'ng2-steps-header',
+            templateUrl: 'templates/header.html',
+            styleUrls: ['css/header.css']
         }), 
         __metadata('design:paramtypes', [ng2_steps_1.StepsService])
-    ], StepsBodyComponent);
-    return StepsBodyComponent;
+    ], StepsHeaderComponent);
+    return StepsHeaderComponent;
 }());
-exports.StepsBodyComponent = StepsBodyComponent;
-//# sourceMappingURL=ng2-steps.component.js.map
+exports.StepsHeaderComponent = StepsHeaderComponent;
+//# sourceMappingURL=ng2-steps-header.component.js.map

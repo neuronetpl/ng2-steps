@@ -1,0 +1,16 @@
+.steps-headers {
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.steps-headers .steps-header {
+  flex-grow: 1;
+  cursor: pointer;
+  padding: 10px;
+}
+.steps-headers .steps-header.active {
+  color: white;
+  font-weight: bold;
+  background: #0078ff;
+}
