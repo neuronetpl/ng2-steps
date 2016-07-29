@@ -1,11 +1,11 @@
 # ng2-steps
 Steps component for angular2 where each step is different component and everything is wired together.
 
-![example](http://neuronet.it:8888/github/ng2Steps.gif)
+![example](http://neuronet.it:8888/github/ng2-steps.gif)
 
 Main component that contain steps:
 ```javascript
-import { StepsService, StepsComponent } from '../your_path/ng2-steps/ng2-steps';
+import { StepsService, StepsBodyComponent, StepsHeaderComponent } from '../your_path/ng2-steps/ng2-steps';
 
 import {Step1Component} from './step1.component';
 import {Step2Component} from './step2.component';
@@ -16,7 +16,7 @@ import {Step4Component} from './step4.component';
   moduleId:module.id,
   templateUrl:`templates/steptest.html`,
   providers:[StepsService],// <---- don't forget
-  directives:[StepsComponent]// <---- don't forget
+  directives:[StepsBodyComponent,StepsHeaderComponent]// <---- don't forget
 })
 export class StepTestComponent implements OnInit{
   public myData:any={};
@@ -55,9 +55,15 @@ export class StepTestComponent implements OnInit{
 ```
 
 ```html
+<ng2-steps-header></ng2-steps-header>
+
+<div class="steps-buttons">
+  <button (click)="prev()" [disabled]="step==1"> Previous page</button>
+  <button (click)="next()" [hidden]="step==4"> Next page</button>
+</div>
 <span>currentStep: {{step}}</span>
 
-<ng2Steps></ng2Steps>
+<ng2-steps-body></ng2-steps-body>
 
 <div class="steps-buttons">
   <button (click)="prev()" [disabled]="step==1"> Previous page</button>
@@ -91,7 +97,7 @@ export class Step1Component{
     // each time some other component update data - we will have info
     // getData is subscribing and unsubscribing on destroy for us
     this.steps.getData((oData)=>{
-      this.otherData=oData;
+      this.otherCompsData=oData;
     },'otherData');
   }
 }
