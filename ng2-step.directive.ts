@@ -1,4 +1,4 @@
-import { Directive , Input, OnInit, ComponentResolver,ViewContainerRef } from '@angular/core';
+import { Directive , Input, OnInit, Compiler , ViewContainerRef } from '@angular/core';
 
 import { StepsService } from './ng2-steps';
 
@@ -12,17 +12,16 @@ export class StepDirective implements OnInit{
   public instance;
 
   constructor(
-    private resolver:ComponentResolver,
+    private compiler:Compiler,
     private viewContainerRef:ViewContainerRef,
     private sds:StepsService
   ){}
 
   ngOnInit(){
     //Magic!
-    this.resolver.resolveComponent(this.content)
-    .then(cmpFactory => {
-        const injector = this.viewContainerRef.injector;
-        return this.viewContainerRef.createComponent(cmpFactory, 0,  injector);
+    this.compiler.compileComponentAsync(this.content).then((cmpFactory)=>{
+      const injector = this.viewContainerRef.injector;
+      this.viewContainerRef.createComponent(cmpFactory, 0,  injector);
     });
   }
 

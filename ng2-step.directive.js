@@ -11,18 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ng2_steps_1 = require('./ng2-steps');
 var StepDirective = (function () {
-    function StepDirective(resolver, viewContainerRef, sds) {
-        this.resolver = resolver;
+    function StepDirective(compiler, viewContainerRef, sds) {
+        this.compiler = compiler;
         this.viewContainerRef = viewContainerRef;
         this.sds = sds;
     }
     StepDirective.prototype.ngOnInit = function () {
         var _this = this;
         //Magic!
-        this.resolver.resolveComponent(this.content)
-            .then(function (cmpFactory) {
+        this.compiler.compileComponentAsync(this.content).then(function (cmpFactory) {
             var injector = _this.viewContainerRef.injector;
-            return _this.viewContainerRef.createComponent(cmpFactory, 0, injector);
+            _this.viewContainerRef.createComponent(cmpFactory, 0, injector);
         });
     };
     __decorate([
@@ -37,7 +36,7 @@ var StepDirective = (function () {
         core_1.Directive({
             selector: '[ng2-step]'
         }), 
-        __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ViewContainerRef, ng2_steps_1.StepsService])
+        __metadata('design:paramtypes', [core_1.Compiler, core_1.ViewContainerRef, ng2_steps_1.StepsService])
     ], StepDirective);
     return StepDirective;
 }());
