@@ -3,10 +3,30 @@ import { Component , Input, OnInit } from '@angular/core';
 import { StepsService } from './ng2-steps';
 
 @Component({
-  moduleId:module.id,
   selector:'ng2-steps-header',
-  templateUrl:'templates/header.html',
-  styleUrls:['css/header.css']
+  template:`
+  <div class="steps-headers">
+    <div class="steps-header" *ngFor="let _step of stepsData; let i=index" (click)="selectStep(i)" [ngClass]="{active:(i+1)==currentStep}" [innerHTML]="_step.title"></div>
+  </div>
+  `,
+  styles:[`
+  .steps-headers {
+    overflow: hidden;
+    display: flex;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .steps-headers .steps-header {
+    flex-grow: 1;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .steps-headers .steps-header.active {
+    color: white;
+    font-weight: bold;
+    background: #0078ff;
+  }
+  `]
 })
 export class StepsHeaderComponent {
 

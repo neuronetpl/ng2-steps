@@ -1,1 +1,1 @@
-{"version":3,"file":"ng2-steps.js","sourceRoot":"","sources":["ng2-steps.ts"],"names":[],"mappings":";AAKA,kCAA6B,qBAAqB,CAAC;AAA1C,wDAA0C;AACnD,mCAA8B,sBAAsB,CAAC;AAA5C,2DAA4C;AACrD,oCAAmC,uBAAuB,CAAC;AAAlD,sEAAkD;AAC3D,2CAAqC,8BAA8B,CAAC;AAA3D,iFAA2D;AACpE,8EAA8E"}
+{"version":3,"file":"ng2-steps.js","sourceRoot":"","sources":["ng2-steps.ts"],"names":[],"mappings":"AAKA,SAAS,YAAY,QAAQ,qBAAqB,CAAC;AACnD,SAAS,aAAa,QAAQ,sBAAsB,CAAC;AACrD,SAAS,kBAAkB,QAAQ,uBAAuB,CAAC;AAC3D,SAAS,oBAAoB,QAAQ,8BAA8B,CAAC;AACpE,8EAA8E"}

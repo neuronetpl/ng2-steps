@@ -1,9 +1,0 @@
-.steps .steps-body {
-  overflow: hidden;
-}
-.steps .steps-body .step {
-  display: none;
-}
-.steps .steps-body .step.visible {
-  display: block;
-}
