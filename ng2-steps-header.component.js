@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,51 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-import { StepsService } from './ng2-steps';
-export let StepsHeaderComponent = class StepsHeaderComponent {
-    constructor(steps) {
+var core_1 = require('@angular/core');
+var ng2_steps_service_1 = require('./ng2-steps.service');
+var StepsHeaderComponent = (function () {
+    function StepsHeaderComponent(steps) {
+        var _this = this;
         this.steps = steps;
         this.stepsData = [];
         this.currentStep = 1;
-        this.steps.getSteps((data) => {
-            this.stepsData = data;
+        this.steps.getSteps(function (data) {
+            _this.stepsData = data;
         });
-        this.steps.getCurrentStep((step) => {
-            this.currentStep = step;
+        this.steps.getCurrentStep(function (step) {
+            _this.currentStep = step;
         });
     }
-    selectStep(index) {
+    StepsHeaderComponent.prototype.selectStep = function (index) {
         this.steps.setCurrentStep(index + 1);
-    }
-};
-StepsHeaderComponent = __decorate([
-    Component({
-        selector: 'ng2-steps-header',
-        template: `
-  <div class="steps-headers">
-    <div class="steps-header" *ngFor="let _step of stepsData; let i=index" (click)="selectStep(i)" [ngClass]="{active:(i+1)==currentStep}" [innerHTML]="_step.title"></div>
-  </div>
-  `,
-        styles: [`
-  .steps-headers {
-    overflow: hidden;
-    display: flex;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  .steps-headers .steps-header {
-    flex-grow: 1;
-    cursor: pointer;
-    padding: 10px;
-  }
-  .steps-headers .steps-header.active {
-    color: white;
-    font-weight: bold;
-    background: #0078ff;
-  }
-  `]
-    }), 
-    __metadata('design:paramtypes', [StepsService])
-], StepsHeaderComponent);
+    };
+    StepsHeaderComponent = __decorate([
+        core_1.Component({
+            selector: 'ng2-steps-header',
+            template: "\n  <div class=\"steps-headers\">\n    <div class=\"steps-header\" *ngFor=\"let _step of stepsData; let i=index\" (click)=\"selectStep(i)\" [ngClass]=\"{active:(i+1)==currentStep}\" [innerHTML]=\"_step.title\"></div>\n  </div>\n  ",
+            styles: ["\n  .steps-headers {\n    overflow: hidden;\n    display: flex;\n    user-select: none;\n    -webkit-user-select: none;\n  }\n  .steps-headers .steps-header {\n    flex-grow: 1;\n    cursor: pointer;\n    padding: 10px;\n  }\n  .steps-headers .steps-header.active {\n    color: white;\n    font-weight: bold;\n    background: #0078ff;\n  }\n  "]
+        }), 
+        __metadata('design:paramtypes', [ng2_steps_service_1.StepsService])
+    ], StepsHeaderComponent);
+    return StepsHeaderComponent;
+}());
+exports.StepsHeaderComponent = StepsHeaderComponent;
 //# sourceMappingURL=ng2-steps-header.component.js.map

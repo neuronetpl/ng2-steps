@@ -1,25 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
-import { StepsService,StepDirective } from './ng2-steps';
+import { StepsService } from './ng2-steps.service';
 
 
 @Component({
   selector: 'ng2-steps-body',
+
   template:`
   <div class="steps">
     <div class="steps-body">
       <div class="step" *ngFor="let _step of stepsData; let i=index" [ngClass]="{visible:i+1==currentStep}">
         <div id="component_{{i}}"></div>
-        <div class="step-content" ng2-step [content]="_step.content" [index]="i">
+        <div class="step-content" ng2-step [content]="_step.content" [module]="_step.module" [index]="i">
         </div>
       </div>
     </div>
     <div class="steps-footer">
     </div>
   </div>
-
   `,
+
+
   styles:[`
     .steps .steps-body {
       overflow: hidden;
@@ -31,9 +33,8 @@ import { StepsService,StepDirective } from './ng2-steps';
       display: block;
     }
   `],
-  directives:[StepDirective]
 })
-export class StepsBodyComponent implements OnInit{
+export class StepsBodyComponent {
 
   private stepsData:any=[];
   private currentStep:number=1;
@@ -47,7 +48,6 @@ export class StepsBodyComponent implements OnInit{
     });
   }
 
-  ngOnInit(){}
 
   selectStep(index){
     this.currentStep=index+1;

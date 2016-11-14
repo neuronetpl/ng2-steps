@@ -1,6 +1,6 @@
 import { Component , Input, OnInit } from '@angular/core';
 
-import { StepsService } from './ng2-steps';
+import { StepsService } from './ng2-steps.service';
 
 @Component({
   selector:'ng2-steps-header',
@@ -9,6 +9,7 @@ import { StepsService } from './ng2-steps';
     <div class="steps-header" *ngFor="let _step of stepsData; let i=index" (click)="selectStep(i)" [ngClass]="{active:(i+1)==currentStep}" [innerHTML]="_step.title"></div>
   </div>
   `,
+
   styles:[`
   .steps-headers {
     overflow: hidden;
